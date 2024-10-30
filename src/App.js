@@ -48,11 +48,11 @@ export function App() {
           })
         })
     
-        resetTurn();
+        setTimeout(() => resetTurn(), 1000);
       }
       else{
         // console.log('those cards dont match');
-        resetTurn();
+        setTimeout(() => resetTurn(), 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
@@ -99,6 +99,7 @@ export function App() {
           card={card} 
           key={card.id} 
           handleChoice = {handleChoice}
+          flipped = {card === choiceOne || card === choiceTwo || card.matched}
           />
         ))}
       </div>
